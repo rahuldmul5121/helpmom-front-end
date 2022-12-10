@@ -20,10 +20,30 @@
         <script>
           var loadFile = function (event) {
             var output = document.getElementById("output");
-            output.src = URL.createObjectURL(event.target.files[0]);
-            output.onload = function () {
-              URL.revokeObjectURL(output.src); // free memory
-            };
+            // output.src = URL.createObjectURL(event.target.files[0]);
+            // output.onload = function () {
+            //   URL.revokeObjectURL(output.src); // free memory
+            // };
+            var reader = new FileReader();
+            reader.addEventListener('load',async function (event2) {
+              output.src=event2.target.result;
+              var imagebase64 = event2.target.result.replace(/^data:image\/[a-z]+;base64,/, "");
+              var form_data = new FormData();
+              form_data.append('imgBase64',imagebase64);
+              // Hit API disini 
+              // https://helpmom-api.azurewebsites.net/status-model
+              var response = await fetch("https://helpmom-api.azurewebsites.net/classifier",{
+                method:'POST',
+                headers:{
+                  'Content-Type':'multipart/form-data;'
+                },
+                body:form_data
+              })
+              var responseJSON = await response.json();
+              console.log(responseJSON);
+            })
+            reader.readAsDataURL(event.target.files[0]);
+            
           };
         </script>
       </div>
