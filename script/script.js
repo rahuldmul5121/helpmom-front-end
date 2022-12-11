@@ -2,7 +2,7 @@ let model = null;
 var hasilPrediksi = document.getElementById("hasilPrediksi");
 document.addEventListener("DOMContentLoaded", async function () {
   console.log("model mulai dimuat");
-  model = await tf.loadLayersModel("model/model.json");
+  model = await tf.loadLayersModel("model_float/model.json");
   console.log("model telah selesai dimuat");
 });
 var loadFile = function (event) {
@@ -43,16 +43,20 @@ var loadFile = function (event) {
         confidence: value,  
       };
     });
-    dataPrediksi.sort((x, y) => y.confidence - x.confidence);
+    // dataPrediksi.sort((x, y) => y.confidence - x.confidence);
     console.log(dataPrediksi);
     
     hasilPrediksi.innerHTML = dataPrediksi[0].class;
+//     hasilPrediksi.innerHTML = dataPrediksi[1].class;
+//     hasilPrediksi.innerHTML = dataPrediksi[2].class;
+//     hasilPrediksi.innerHTML = dataPrediksi[3].class;
+//     hasilPrediksi.innerHTML = dataPrediksi[4].class;
     
-    let htmlData = "";
-  dataPrediksi.forEach((data) => {
-    htmlData += `<li>${data.class} &rarr; ${data.confidence}</li>`;
-  });
-  elemDetail.innerHTML = htmlData;
+//     let htmlData = "";
+//   dataPrediksi.forEach((data) => {
+//     htmlData += `<li>${data.class} &rarr; ${data.confidence}</li>`;
+//   });
+//   elemDetail.innerHTML = htmlData;
   });
 
   reader.readAsDataURL(event.target.files[0]);
