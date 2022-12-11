@@ -1,0 +1,70 @@
+{
+    "makanan": [
+      {
+        "id": "1",
+        "name": "Ayam Pop",
+        "ukuran_1" : "200gr",
+        "bahan_1": "Ayam Potong",
+        "ukuran_2" : "1/2 buah",
+        "bahan_2": "Jeruk Nipis",
+        "ukuran_3" : "800ml",
+        "bahan_3": "Air Kelapa",
+        "ukuran_4" : "1 batang",
+        "bahan_4": "Serai",
+        "gambar":"asset/resep/ayam_pop (10).jpg"
+      },
+      {
+        "id": "2",
+        "name": "Ayam Goreng",
+        "ukuran_1" : "1 ekor",
+        "bahan_1": "Ayam",
+        "ukuran_2" : "1/2 buah",
+        "bahan_2": "Jeruk Nipis",
+        "ukuran_3" : "1sdm",
+        "bahan_3": "Kecap Manis",
+        "ukuran_4" : "1 sdm",
+        "bahan_4": "Garam",
+        "gambar":"asset/resep/ayam_goreng (27).jpg"
+      },
+      {
+        "id": "3",
+        "name": "Ayam Pop",
+        "ukuran_1" : "500 grr",
+        "bahan_1": "Ikan kakap",
+        "ukuran_2" : "1/2 buah",
+        "bahan_2": "Jeruk Nipis",
+        "ukuran_3" : "3 buah",
+        "bahan_3": "Cabai keriting",
+        "ukuran_4" : "1 ruas",
+        "bahan_4": " Kunyit",
+        "gambar":"asset/resep/gulai_ikan (1).jpg"
+      },
+      {
+        "id": "1",
+        "name": "Gulai tambusu",
+        "ukuran_1" : "500gr",
+        "bahan_1": "Usus sapi",
+        "ukuran_2" : "3 buah",
+        "bahan_2": "telur",
+        "ukuran_3" : "5 buah",
+        "bahan_3": "tahu",
+        "ukuran_4" : "2 butir",
+        "bahan_4": "Bawang merah",
+        "gambar":"asset/resep/gulai_tambusu (1).jpg"
+      },
+      {
+        "id": "1",
+        "name": "Ayam Pop",
+        "ukuran_1" : "1 kg",
+        "bahan_1": "Kikil Sapi",
+        "ukuran_2" : "4 sdm ",
+        "bahan_2": "Minyak sayur",
+        "ukuran_3" : "1 liter",
+        "bahan_3": "Santan Encer",
+        "ukuran_4" : "1 sdt ",
+        "bahan_4": "Gula Pasir",
+        "gambar":"asset/resep/gulai_tunjang (1) (1).jpg"
+      }
+      
+    ]
+  }

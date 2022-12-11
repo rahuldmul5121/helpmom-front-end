@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Style/resep.css">
+    <title>Recipes</title>
+</head>
+<body>
+    <?php 
+$file = file_get_contents("makanan.json");
+$json_decoded = json_decode($file);
+print_r($file);
+?>
+    <div class="container">
+        <div class="judul">
+            <h1>Resep</h1>
+        </div>
+        <div class="content">
+            <?php foreach ($file as $makanan ) {
+            ?>
+            <div class="card">
+                Ayam Goreng
+                <br>
+                <img src="asset/resep/ayam_goreng (12).jpg" alt="" width="120px" height="120px" >
+                <div class="bahan-bahan">Bahan:
+                    <ul>
+                        <li><span>100gram</span> Gula</li>
+                    </ul>
+                </div>
+            </div>
+            <?php
+            }
+            ?>
+            <div class="card">
+                Ayam Pop
+                <br>
+                <img src="asset/resep/ayam_pop (10).jpg" alt="" width="120px" height="120px">
+                <div class="bahan-bahan">Bahan:
+                    <ul>
+                        <li><span>100gram</span> Gula</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card">
+                Gulai Tunjang
+                <br>
+                <img src="asset/resep/gulai_tunjang (1) (1).jpg" alt="" width="120px" height="120px">
+                <div class="bahan-bahan">Bahan:
+                    <ul>
+                        <li><span>100gram</span> Gula</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card">
+                Telur Dadar
+                <br>
+                <img src="asset/resep/telur_dadar (10).jpg" alt="" width="120px" height="120px">
+                <div class="bahan-bahan">Bahan:
+                    <ul>
+                        <li><span>100gram</span> Gula</li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="card">
+                Gulai Tambusu
+                <br>
+                <img src="asset/resep/gulai_tambusu (1).jpg" alt="" width="120px" height="120px">
+                <div class="bahan-bahan">Bahan:
+                    <ul>
+                        <li><span>100gram</span> Gula</li>
+                    </ul>
+                </div>
+
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>

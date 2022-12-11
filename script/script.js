@@ -47,16 +47,6 @@ var loadFile = function (event) {
     console.log(dataPrediksi);
     
     hasilPrediksi.innerHTML = dataPrediksi[0].class;
-//     hasilPrediksi.innerHTML = dataPrediksi[1].class;
-//     hasilPrediksi.innerHTML = dataPrediksi[2].class;
-//     hasilPrediksi.innerHTML = dataPrediksi[3].class;
-//     hasilPrediksi.innerHTML = dataPrediksi[4].class;
-    
-//     let htmlData = "";
-//   dataPrediksi.forEach((data) => {
-//     htmlData += `<li>${data.class} &rarr; ${data.confidence}</li>`;
-//   });
-//   elemDetail.innerHTML = htmlData;
   });
 
   reader.readAsDataURL(event.target.files[0]);
