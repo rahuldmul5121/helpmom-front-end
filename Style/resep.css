@@ -40,6 +40,10 @@
     flex-direction: row;
     border: 1px solid white;
 }
+.card a{
+    text-decoration: none;
+    color: white;
+}
 ul li{
     display: inline-block;
     font-size: 16px;
