@@ -43,7 +43,7 @@ var loadFile = function (event) {
         confidence: value,  
       };
     });
-    // dataPrediksi.sort((x, y) => y.confidence - x.confidence);
+    dataPrediksi.sort((x, y) => y.confidence - x.confidence);
     console.log(dataPrediksi);
     
     hasilPrediksi.innerHTML = dataPrediksi[0].class;
