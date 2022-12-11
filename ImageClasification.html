@@ -1,78 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="Style/ImageClasification.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <title>Document</title>
-  </head>
-  <body>
-    <div class="container">
-      <div class="content">
-        <input type="file" accept="image/*" onchange="loadFile(event)" />
-        <br />
-        <img id="output" />
-        <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
-        <script>
-          var model = null;
-          document.addEventListener("DOMContentLoaded", async function () {
-            console.log("model mulai dimuat");
-            model = await tf.loadLayersModel("model/model.json");
-            console.log("model telah selesai dimuat");
-          });
-          var loadFile = function (event) {
-            var output = document.getElementById("output");
-            // output.src = URL.createObjectURL(event.target.files[0]);
-            // output.onload = function () {
-            //   URL.revokeObjectURL(output.src); // free memory
-            // };
-            var reader = new FileReader();
-            reader.addEventListener("load", async function (event2) {
-              output.src = event2.target.result;
-              var imagebase64 = event2.target.result.replace(
-                /^data:image\/[a-z]+;base64,/,
-                ""
-              );
-              // Prediksi model disini
-              if (model == null) {
-                alert("Model belum selesai dimuat");
-                return;
-              }
-              var label = [
-                "ayam_goreng",
-                "ayam_pop",
-                "daging_rendang",
-                "dendeng_batokok",
-                "gulai_ikan",
-                "gulai_tambusu",
-                "gulai_tunjang",
-                "telur_balado",
-                "telur_dadar",
-              ];
 
-              var img = tf.browser.fromPixels(output);
-              img = img.resizeNearestNeighbor([150, 150]);
-              img = img.div(tf.scalar(255));
-              img = img.expandDims();
-              let dataPrediksi = await model.predict(img).data();
-              dataPrediksi = Array.from(dataPrediksi).map((value, idx) => {
-                return {
-                  class: label[idx],
-                  confidence: value,
-                };
-                console.log(dataPrediksi);
-              });
-            });
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="Style/ImageClasification.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <title>Search food name</title>
+</head>
 
-            reader.readAsDataURL(event.target.files[0]);
-          };
-        </script>
+<body>
+  <div class="container">
+    <div class="content">
+      <h1>Search Image with Image Clasification</h1>
+      <small>Upload your food image to find foods name</small>
+      <br>
+      <input type="file" accept="image/*" onchange="loadFile(event)" />
+      <br />
+      <img id="output" />
+      <div class="result" id="hasilPrediksi">
       </div>
+    </span>
+  </h2>
+  <ul id="elemDetail">
+    
+  </ul>
+      <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
+      <script src="script/script.js"></script>
     </div>
-  </body>
+  </div>
+</body>
+
 </html>
