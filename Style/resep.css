@@ -38,6 +38,7 @@
     width: 20%;
     margin: 5px 20px;
     flex-direction: row;
+    border: 1px solid white;
 }
 ul li{
     display: inline-block;
