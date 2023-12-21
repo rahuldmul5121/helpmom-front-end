@@ -47,6 +47,8 @@ var loadFile = function (event) {
     console.log(dataPrediksi);
     
     hasilPrediksi.innerHTML = dataPrediksi[0].class;
+    // Reset isian array
+    dataPrediksi = null;
   });
 
   reader.readAsDataURL(event.target.files[0]);
