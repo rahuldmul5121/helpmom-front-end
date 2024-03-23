@@ -31,7 +31,7 @@ var loadFile = function (event) {
       "Telur Dadar",
     ];
 
-    
+
     let img = tf.browser.fromPixels(output);
     img = img.resizeNearestNeighbor([150, 150]);
     img = img.div(tf.scalar(255));
@@ -40,13 +40,16 @@ var loadFile = function (event) {
     dataPrediksi = Array.from(dataPrediksi).map((value, idx) => {
       return {
         class: label[idx],
-        confidence: value,  
+        confidence: value,
       };
     });
     dataPrediksi.sort((x, y) => y.confidence - x.confidence);
     console.log(dataPrediksi);
-    
+
     hasilPrediksi.innerHTML = dataPrediksi[0].class;
+    // Mengatur ulang dataPrediksi menjadi 0
+    dataPrediksi = Array(label.length).fill({ class: '', confidence: 0 });
+
   });
 
   reader.readAsDataURL(event.target.files[0]);

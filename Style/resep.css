@@ -1,54 +1,61 @@
-*{
+* {
     padding: 0;
     margin: 0;
+    box-sizing: border-box; /* Tambahkan ini untuk memastikan padding dan border dimasukkan dalam hitungan lebar dan tinggi */
 }
-.container{
+
+.container {
     width: 100%;
     height: 100vh;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-      url(https://i.pinimg.com/564x/d6/ee/09/d6ee0967c1ed21843be74180b94bddf4.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://i.pinimg.com/564x/d6/ee/09/d6ee0967c1ed21843be74180b94bddf4.jpg);
     background-size: cover;
     background-position: center;
+    display: flex;
+    flex-direction: column; /* Tambahkan ini agar konten di tengah vertikal */
+    align-items: center; /* Tambahkan ini untuk memusatkan konten secara horizontal */
+    justify-content: center; /* Tambahkan ini untuk memusatkan konten secara vertikal */
 }
-.judul{
+
+.judul {
     width: 85%;
     margin: auto;
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    padding-top: 20px;
+    text-align: center; /* Ubah ini dari justify-content: center; */
+    padding: 20px 0; /* Tambahkan padding atas dan bawah */
     color: white;
-    padding-bottom: 20px;
+    font-size: 32px; /* Sesuaikan ukuran font sesuai preferensi */
 }
-.content{
-    /* border: 1pt solid white; */
+
+.content {
     width: 85%;
-    margin: auto;
+    margin: 20px auto; /* Ubah margin atas menjadi 20px */
     display: flex;
-    top: 20%;
-    align-items: center;
-    text-align: center;
-    color: white;
-    flex-direction: row;
-    font-size: 24px;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    box-sizing: border-box;
+    flex-wrap: wrap; /* Tambahkan ini agar item berada dalam baris baru saat ukuran layar kecil */
+    justify-content: center; /* Tambahkan ini agar item berada di tengah secara horizontal */
 }
-.card{
-    width: 20%;
-    margin: 5px 20px;
-    flex-direction: row;
+
+.card {
+    width: calc(20% - 40px); /* Sesuaikan lebar card dengan margin */
+    margin: 20px; /* Ubah margin menjadi 20px */
+    padding: 10px; /* Tambahkan padding agar konten tidak terlalu dekat dengan tepi card */
     border: 1px solid white;
+    text-align: center; /* Tambahkan ini untuk memusatkan teks */
 }
-.card a{
+
+.card a {
     text-decoration: none;
     color: white;
 }
-ul li{
-    /* display: inline; */
-    font-size: 16px;
+
+ul {
+    list-style-type: none; /* Hilangkan bullet point */
+    padding: 0; /* Hapus padding default */
 }
-ul li span{
+
+ul li {
     font-size: 16px;
+    margin-bottom: 5px; /* Tambahkan margin bawah untuk memberikan ruang antara item */
+}
+
+ul li span {
     font-weight: bold;
 }

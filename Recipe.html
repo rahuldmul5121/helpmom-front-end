@@ -10,18 +10,11 @@
     <title>Recipes</title>
 </head>
 <body>
-    <?php 
-$file = file_get_contents("makanan.json");
-$json_decoded = json_decode($file);
-print_r($file);
-?>
     <div class="container">
         <div class="judul">
             <h1>Resep</h1>
         </div>
         <div class="content">
-            <?php foreach ($file as $makanan ) {
-            ?>
             <a href="#">
             <div class="card">
                 Ayam Goreng
@@ -37,9 +30,6 @@ print_r($file);
                 </div>
             </a>
             </div>
-            <?php
-            }
-            ?>
             <div class="card">
                 <a href="#">
                 Ayam Pop
